@@ -1,0 +1,86 @@
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeContainer {
+    display: grid;
+}
+
+.name,
+.abbrivation {
+    margin: 0;
+    color: #FFFFFF;
+    letter-spacing: 1rem;
+    text-align: center;
+    font-size: 15rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+}
+
+.abbrivation {
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+}
+
+.colored {
+    color: #FF914D;
+}
+
+.get-started {
+    width: fit-content + 2rem;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15%;
+}
+
+.signup,
+.login {
+    cursor: pointer;
+    background-color: #FF914D;
+    color: #FFFFFF;
+    border: none;
+    height: 75px;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+}
+
+
+@media screen  and (min-width: 320px) {
+
+    .name {
+        font-size: 5rem;
+    }
+
+    .abbrivation {
+        font-size: 1rem;
+    }
+
+    .signup,
+    .login {
+        width: 7rem;
+        height: 3rem;
+    }
+    
+}
+
+@media screen  and (min-width: 615px) {
+    .name {
+        font-size: 10rem;
+    }
+
+    .abbrivation {
+        font-size: 2.5rem;
+    }
+
+    .signup,
+    .login {
+        width: 8rem;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+}
