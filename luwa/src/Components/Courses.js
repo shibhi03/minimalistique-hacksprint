@@ -37,8 +37,8 @@ export default function Course() {
           {coursesList.map((course, index) => (
             <Col
               key={course.id}
-              className={`course ${selectedIndex === index ? "selected" : ""}`}
-              onClick={() => {setSelectedIndex(index); setCourseSelected(course);}}
+              className={`course ${selectedIndex === index ? "clicked" : ""}`}
+              onClick={() => {setSelectedIndex(index); setSelected(true);}}
             >
               <img className="course-img" src={course.img} alt={course.name} />
               <h2 className="course-name">{course.name}</h2>
@@ -51,7 +51,12 @@ export default function Course() {
           </h3>
         </Row>
         <Row className="next-btn">
-            <Button className="nxt-btn btn">Next</Button>
+            <Button 
+              className="nxt-btn btn"
+              disabled={!selected}
+              >
+                Next
+            </Button>
         </Row>
       </Container>
     </Container>

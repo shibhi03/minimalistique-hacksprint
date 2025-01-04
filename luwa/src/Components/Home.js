@@ -13,7 +13,7 @@ export default function Home() {
           <h1 className="name">LUWA</h1>
           <h2 className="abbrivation">
             <span className="colored">L</span>earn in yo
-            <span className="colored">U</span>r{" "}
+            <span className="colored">U</span>r
             <span className="colored">WA</span>y
           </h2>
         </Row>
