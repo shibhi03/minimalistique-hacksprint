@@ -2,6 +2,8 @@ import { Row } from "react-bootstrap";
 import "./Home.css";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
+// import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 
 export default function Home() {
   return (
@@ -21,7 +23,7 @@ export default function Home() {
           </Col>
           <p className="or"></p>
           <Col>
-            <button className="btn signup">Sign up</button>
+            <Button className="btn signup">Sign up</Button>
           </Col>
         </Row>
       </Container>
