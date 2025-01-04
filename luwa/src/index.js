@@ -8,6 +8,7 @@ import Signup from './Components/getting Sarted/Signup';
 import reportWebVitals from './reportWebVitals';
 import Course from './Components/Courses';
 import KnownDomain from './Components/KnownDomain';
+import TakeTest from './Components/TakeTest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +16,8 @@ root.render(
     <Routes>
       {/* <Route path="/" element={<Home />} /> */}
       {/* <Route path="/" element={<Course />} /> */}
-      <Route path="/" element={<KnownDomain />} />
+      {/* <Route path="/" element={<KnownDomain />} /> */}
+      <Route path="/" element={<TakeTest />} />
       <Route path="/login" element={<Login />}/>
       <Route path="/signup" element={<Signup />}/>
     </Routes>

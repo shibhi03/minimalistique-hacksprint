@@ -68,6 +68,14 @@ export default function KnownDomain() {
         <Row className="next-btn">
             <Button 
               className="nxt-btn btn"
+              style={{
+                backgroundColor: '#FF914D',
+              }}
+              >
+                Back
+            </Button>
+            <Button 
+              className="nxt-btn btn"
               disabled={!selected}
               >
                 Next

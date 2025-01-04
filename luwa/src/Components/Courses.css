@@ -37,7 +37,6 @@
     padding: 30px;
     border: solid 3px #FFBD94;
     display: grid;
-    grid-template-rows: 1;
     align-content: center;
     justify-content: center;
     border-radius: 20px;
@@ -62,10 +61,12 @@
 
 .next-btn {
     display: grid;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
 }
 
-.nxt-btn {
+.btn {
     width: 8rem;
     height: 3rem;
     font-size: 1.5rem;
