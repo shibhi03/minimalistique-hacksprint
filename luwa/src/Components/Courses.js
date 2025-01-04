@@ -1,32 +1,26 @@
 import { useState } from "react";
 import "./Courses.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import c from "../Assets/c.png";
 import cpp from "../Assets/cpp.png";
 import java from "../Assets/java.png";
 import py from "../Assets/python.png";
 
 export const coursesList = [
-  { id: 1, name: "c", img: c },
-  { id: 2, name: "c++", img: cpp },
-  { id: 3, name: "java", img: java },
-  { id: 4, name: "python", img: py },
+  { id: 1, name: "C", img: c },
+  { id: 2, name: "C++", img: cpp },
+  { id: 3, name: "Java", img: java },
+  { id: 4, name: "Python", img: py },
 ];
 
 export default function Course() {
+  const navigate = useNavigate();
+  
   const [courseSelected, setCourseSelected] = useState();
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [selected, setSelected] = useState(false);
-
-  function onSelected(e) {
-    setSelected();
-
-    const allElements = document.querySelectorAll(".clicked");
-    allElements.forEach((e) => e.classList.remove("clicked"));
-
-    e.target.classList.add("clicked");
-  }
-
+  
   return (
     <Container className="coursesContainer">
       <Container className="innerContainer">
@@ -38,7 +32,11 @@ export default function Course() {
             <Col
               key={course.id}
               className={`course ${selectedIndex === index ? "clicked" : ""}`}
-              onClick={() => {setSelectedIndex(index); setSelected(true);}}
+              onClick={() => {
+                setSelectedIndex(index);
+                setSelected(true);
+                setCourseSelected(course.id);
+              }}
             >
               <img className="course-img" src={course.img} alt={course.name} />
               <h2 className="course-name">{course.name}</h2>
@@ -50,12 +48,13 @@ export default function Course() {
             Selected: {selected ? <span>1</span> : <span>0</span>}/1
           </h3>
         </Row>
+
         <Row className="next-btn">
             <Button 
-              className="nxt-btn btn"
-              disabled={!selected}
-              >
-                Next
+            className="nxt-btn btn" 
+            disabled={!selected}
+            onClick={() => navigate('/signup/known-domain', {state: {coursesList, courseSelected}})}>
+              Next
             </Button>
         </Row>
       </Container>

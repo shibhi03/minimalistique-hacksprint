@@ -1,8 +1,13 @@
 import { Container, Row, Button } from "react-bootstrap";
+import { useNavigate, useLocation } from "react-router-dom";
 import './Taketest.css';
 
 export default function TakeTest() {
-  const course = "C++";
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const course = location.state.selectedDomain;
+  
   return (
     <Container className="takeTestContainer">
       <Container className="test-innerContainer">
@@ -13,7 +18,9 @@ export default function TakeTest() {
             <Button className="test-btn btn">
                 Take Test
             </Button>
-            <Button className="back-btn btn">
+            <Button 
+            className="back-btn btn"
+            onClick={() => navigate(-1)}>
                 Back
             </Button>
         </Row>

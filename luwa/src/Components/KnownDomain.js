@@ -1,50 +1,37 @@
 import { useEffect, useState } from "react";
 import "./Courses.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import c from "../Assets/c.png";
-import cpp from "../Assets/cpp.png";
-import java from "../Assets/java.png";
-import py from "../Assets/python.png";
+import { useNavigate, useLocation } from "react-router-dom";
 import none from "../Assets/none.png";
 
-export const coursesList = [
-  { id: 1, name: "c", img: c },
-  { id: 2, name: "c++", img: cpp },
-  { id: 3, name: "java", img: java },
-  { id: 4, name: "python", img: py },
-];
-
 export default function KnownDomain() {
-  const excluded = 3;
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const excluded = location.state.courseSelected;
+  const courseList = location.state.coursesList;
+
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedDomain, setSelectedDomain] = useState(null);
   const [selected, setSelected] = useState(false);
   const [added, setAdded] = useState(false);
-  const [dispCourses, setDispCourses] = useState(coursesList);
+  const [dispCourses, setDispCourses] = useState(courseList);
 
   useEffect(() => {
     if (!added) {
       setDispCourses((prevCrs) => [
         ...prevCrs.filter((_, index) => index+1 !== excluded),
-        {id: 5, name: "none", img: none},
+        {id: 5, name: "Fresher", img: none},
       ]);
       setAdded(true);
     }
   }, [added]);
 
-  // function onSelected(e) {
-  //   setSelected();
-
-  //   const allElements = document.querySelectorAll(".clicked");
-  //   allElements.forEach((e) => e.classList.remove("clicked"));
-
-  //   e.target.classList.add("clicked");
-  // }
-
   return (
     <Container className="coursesContainer">
       <Container className="innerContainer">
         <Row>
-          <h1 className="course-text ">Choose a course to start learning.</h1>
+          <h1 className="course-text ">Choose your known language</h1>
         </Row>
         <Row className="container courseContainer">
           {dispCourses
@@ -53,7 +40,11 @@ export default function KnownDomain() {
             <Col
               key={course.id}
               className={`course ${selectedIndex === index ? "clicked" : ""}`}
-              onClick={() => {setSelectedIndex(index); setSelected(true);}}
+              onClick={() => {
+                setSelectedIndex(index); 
+                setSelected(true);
+                setSelectedDomain(course.name);
+              }}
             >
               <img className="course-img" src={course.img} alt={course.name} />
               <h2 className="course-name">{course.name}</h2>
@@ -68,17 +59,20 @@ export default function KnownDomain() {
         <Row className="next-btn">
             <Button 
               className="nxt-btn btn"
+              disabled={!selected}
+              onClick={()=>
+                selectedDomain !== "Fresher" ? navigate('/takeTest', {state: {selectedDomain}}) : console.log("none")}
+              >
+                Next
+            </Button>
+            <Button 
+              className="back-btn btn"
               style={{
                 backgroundColor: '#FF914D',
               }}
+              onClick={()=>navigate(-1)}
               >
                 Back
-            </Button>
-            <Button 
-              className="nxt-btn btn"
-              disabled={!selected}
-              >
-                Next
             </Button>
         </Row>
       </Container>

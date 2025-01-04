@@ -11,9 +11,8 @@
     width: 50%;
     display: grid;
     gap: 20px;
-    grid-row: inherit;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
 }
 
 .course-row {
@@ -52,7 +51,7 @@
 }
 
 .clicked {
-    border: solid 3px #FF914D;
+    border: solid 5px #FF914D;
 }
 
 .selected {
@@ -61,16 +60,20 @@
 
 .next-btn {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    justify-items: center;
+    width: max-content;
 }
 
-.btn {
+.back-btn {
     width: 8rem;
     height: 3rem;
     font-size: 1.5rem;
     background-color: #FF914D;
+}
+
+.nxt-btn {
+    width: 15rem;
+    height: 4rem;
 }
 
 .nxt-btn:disabled {

@@ -1,11 +1,10 @@
-import { Row } from "react-bootstrap";
+import { Row, Container, Col, Button } from "react-bootstrap";
 import "./Home.css";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-// import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <Container className="home">
       <Container className="homeContainer">
@@ -19,11 +18,15 @@ export default function Home() {
         </Row>
         <Row className="get-started">
           <Col>
-            <button className="btn login">Log in</button>
+            <button className="btn login" onClick={() => navigate("/login")}>
+              Log in
+            </button>
           </Col>
           <p className="or"></p>
           <Col>
-            <Button className="btn signup">Sign up</Button>
+            <Button className="btn signup" onClick={() => navigate("/signup")}>
+              Sign up
+            </Button>
           </Col>
         </Row>
       </Container>

@@ -19,7 +19,6 @@
 }
 
 .test-btns {
-    /* background-color: aqua; */
     display: grid;
     gap: 20px;
     margin: 10%;
@@ -45,6 +44,6 @@
 
 @media screen  and (min-width: 615px) {
     .test-btns {
-        margin: 10%;
+        margin: 5%;
     }
 }

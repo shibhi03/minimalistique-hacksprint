@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Home from './Components/Home';
-import Login from './Components/getting Sarted/Login';
-import Signup from './Components/getting Sarted/Signup';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
 import reportWebVitals from './reportWebVitals';
 import Course from './Components/Courses';
 import KnownDomain from './Components/KnownDomain';
@@ -14,12 +14,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      {/* <Route path="/" element={<Home />} /> */}
-      {/* <Route path="/" element={<Course />} /> */}
-      {/* <Route path="/" element={<KnownDomain />} /> */}
-      <Route path="/" element={<TakeTest />} />
+      <Route path="/" element={<Home />} />
+
       <Route path="/login" element={<Login />}/>
+
+      {/* Sign up */}
       <Route path="/signup" element={<Signup />}/>
+      <Route path="/signup/courses" element={<Course />} />
+      <Route path="/signup/known-domain" element={<KnownDomain />} />
+      
+      <Route path="/takeTest" element={<TakeTest />} />
     </Routes>
   </BrowserRouter>
 );

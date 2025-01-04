@@ -37,12 +37,13 @@
     margin-top: 15%;
 }
 
-Button {
+.btn {
     cursor: pointer;
     background-color: #FF914D;
     color: #FFFFFF;
     border: none;
     border-radius: 20px;
+    font-size: 1.5rem;
 }
 
 
@@ -75,8 +76,8 @@ Button {
 
     .signup,
     .login {
-        width: 8rem;
-        height: 3rem;
+        width: 15rem;
+        height: 4rem;
         font-size: 1.5rem;
     }
 }
