@@ -10,6 +10,7 @@ import Course from './Components/Courses';
 import KnownDomain from './Components/KnownDomain';
 import TakeTest from './Components/TakeTest';
 import TestPage from './Components/TestPage';
+import Analysis from './Components/Analysis';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,8 @@ root.render(
       {/* Assessment */}
       <Route path="/takeTest" element={<TakeTest />} />
       <Route path="/takeTest/questions" element={<TestPage />} />
+
+      <Route path="/analysis" element={<Analysis />} />
     </Routes>
   </BrowserRouter>
 );

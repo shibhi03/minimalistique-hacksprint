@@ -15,7 +15,7 @@ function TestPage() {
   const [i, seti] = useState(1);
   const [queno, setQueno] = useState(1);
   const [button, setButton] = useState("Next");
-  const [score, setScore] = useState({level: {}, concepts : {}});
+  const [score, setScore] = useState({level: {}, concepts : {}, skipped: {}});
   const [totalScore, setTotalScore] = useState({level: {}, concepts : {}});
 
   // console.log(score);
@@ -36,6 +36,16 @@ function TestPage() {
   }, []);
 
   function handleButton(button) {
+
+    if (!selected) {
+      setScore((prevScore) => ({
+        ...prevScore,
+        skipped: {
+          ...prevScore.skipped,
+          [nextQuestion.id]: nextQuestion.id,
+        }
+      }))
+    }
 
     // Total score
     if (selected) {
@@ -69,7 +79,7 @@ function TestPage() {
       // Level score
       setScore((prevScore) => {
         return {
-          ...prevScore["level"], 
+          ...prevScore, 
           level: {
             ...prevScore.level,
             [nextQuestion.level]: prevScore.level[nextQuestion.level] ? prevScore.level[nextQuestion.level] + 1 : 1
