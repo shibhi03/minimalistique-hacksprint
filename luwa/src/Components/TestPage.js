@@ -11,7 +11,6 @@ function TestPage() {
       .get("http://localhost:6969/luwa/api/questions")
       .then((response) => {
         setData(response.data);
-        console.log(response);
       })
       .catch((error) => {
         console.error(error);

@@ -17,6 +17,8 @@ app.get("/luwa/api/questions", (req, res) => {
   res.json(questions);
 });
 
+app.use("/img", express.static(path.join(__dirname, "assets/img")));
+
 app.get("/luwa/api/courses", (req, res) => {
   const courses = require("./assets/courses.json");
   res.json(courses);

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Courses.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
-import none from "../Assets/none.png";
+// import none from "../Assets/none.png";
 
 export default function KnownDomain() {
   const navigate = useNavigate();
@@ -14,18 +14,6 @@ export default function KnownDomain() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [selectedDomain, setSelectedDomain] = useState(null);
   const [selected, setSelected] = useState(false);
-  const [added, setAdded] = useState(false);
-  const [dispCourses, setDispCourses] = useState(courseList);
-
-  useEffect(() => {
-    if (!added) {
-      setDispCourses((prevCrs) => [
-        ...prevCrs.filter((_, index) => index+1 !== excluded),
-        {id: 5, name: "Fresher", img: none},
-      ]);
-      setAdded(true);
-    }
-  }, [added]);
 
   return (
     <Container className="coursesContainer">
@@ -34,8 +22,8 @@ export default function KnownDomain() {
           <h1 className="course-text ">Choose your known language</h1>
         </Row>
         <Row className="container courseContainer">
-          {dispCourses
-            // .filter((_, index) => index+1 !== excluded)
+          {courseList
+            .filter((_, index) => index+1 !== excluded)
             .map((course, index) => (
             <Col
               key={course.id}
