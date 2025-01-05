@@ -1,0 +1,86 @@
+[
+    {
+        "question": "What is the size of 'int' in a 32-bit operating systems?",
+        "A": "32 bits",
+        "B": "32 Bytes",
+        "C": "16 bits",
+        "D": "16 Bytes",
+        "answer": "A",
+        "level": "Basic",
+        "category": "Theory",
+        "concept": ["Basics", "Data types"],
+        "language": ["C", "CPP", "Java", "Python"]
+    },
+    {
+        "question": "Which loop is executed atleast once?",
+        "A": "for loop",
+        "B": "while loop",
+        "C": "do-while loop",
+        "D": "None of the above",
+        "answer": "C",
+        "level": "Basic",
+        "category": "Theory",
+        "concept": ["Basics", "loops"],
+        "language": ["C", "CPP", "Java"]
+    },
+    {
+        "question": "Which access specifier best implements data hiding?",
+        "A": "protected",
+        "B": "private",
+        "C": "public",
+        "D": "None of the above",
+        "answer": "B",
+        "level": "Intermediate",
+        "category": "Theory",
+        "concept": ["OOPs", "Encapsulation"],
+        "language": ["CPP", "Java", "Python"]
+    },
+    {
+        "question": "How do you resolve ambiguity in multiple inheritance?",
+        "A": "class A : public B1, public B2 {\n\tvoid func() {\n\t\tB1::func();\n\t}\n};",
+        "B": "class A : public B1, public B2 {\n\tvoid func() {\n\t\tfunc();\n\t}\n};",
+        "C": "class A : public B1, public B2 {\n\tusing B1::func;\n};",
+        "D": "class A : public B1, public B2 {\n\tvirtual void func();\n};",
+        "answer": "A",
+        "level": "Advance",
+        "category": "Practical",
+        "concept": ["OOPs", "Inheritance"],
+        "language": ["CPP"]
+    },
+    {
+        "question": "Among the following codes, which one is syntatically correct?",
+        "A": "int add(a, b) {return a + b;}",
+        "B": "int add(int a, int b) {return a + b;}",
+        "C": "int add(int a, int b) return a + b;",
+        "D": "add(int a, int b) {return a + b;}",
+        "answer": "B",
+        "level": "Intermediate",
+        "category": "Practical",
+        "concept": ["Basics", "Functions & methods"],
+        "language": ["C", "CPP"]
+    },
+    {
+        "question": "Which among sudo code will give the output: 2, 4, 6, ... , 20",
+        "A": "for i = 0 to 20:\n\tPrint i",
+        "B": "set i = 2\nwhile (i < 20):\n\tprint i\n\ti = i + 2",
+        "C": "for i = 0 to 20:\n\tprint i\n\ti = i + 2",
+        "D": "set i = 2\nwhile (i <= 20):\n\tprint i\n\ti = i + 1\n}",
+        "answer": "C",
+        "level": "Basic",
+        "category": "Practical",
+        "concept": ["Basics", "loops"],
+        "language": ["C", "CPP", "Java", "Python"]
+    },
+    {
+        "question": "",
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "",
+        "answer": "",
+        "level": "",
+        "category": "",
+        "concept": [],
+        "language": ["C", "CPP", "Java", "Python"]
+    }
+]

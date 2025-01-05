@@ -9,12 +9,14 @@ import reportWebVitals from './reportWebVitals';
 import Course from './Components/Courses';
 import KnownDomain from './Components/KnownDomain';
 import TakeTest from './Components/TakeTest';
+import TestPage from './Components/TestPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
+      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/" element={<TestPage />} />
 
       <Route path="/login" element={<Login />}/>
 
