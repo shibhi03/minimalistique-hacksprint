@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./TestPage.css";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function TestPage() {
-  const language = "Python";
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const language = location.state.course;
   const [data, setData] = useState(null);
   const [nextQuestion, setNextQuestion] = useState(null);
+  const [selected, setSelected] = useState(null);
+  const [i, seti] = useState(1);
+  const [queno, setQueno] = useState(1);
+  const [button, setButton] = useState("Next");
+  const [score, setScore] = useState({level: {}, concepts : {}});
+  const [totalScore, setTotalScore] = useState({level: {}, concepts : {}});
 
+  // console.log(score);
 
   useEffect(() => {
     axios
@@ -26,57 +35,139 @@ function TestPage() {
       });
   }, []);
 
-  const [i, seti] = useState(1);
-  const [queno, setQueno] = useState(1);
-  const [button, setButton] = useState("Next");
-  function handleButton() {
-    if (data !== null && data.length > 0 && i < data.length) {
+  function handleButton(button) {
 
+    // Total score
+    if (selected) {
+      // Level score
+      setTotalScore((prevScore) => {
+        return {
+          ...prevScore, 
+          level: {
+            ...prevScore.level,
+            [nextQuestion.level]: prevScore.level[nextQuestion.level] ? prevScore.level[nextQuestion.level] + 1 : 1
+          }
+        }
+      })
+
+      // Concepts Score
+      nextQuestion.concepts.forEach((concept) => {
+        setTotalScore((prevScore) => {
+          return {
+            ...prevScore,
+            concepts: {
+              ...prevScore.concepts,
+              [concept]: prevScore.concepts[concept] ? prevScore.concepts[concept] + 1 : 1
+            }
+          }
+        });
+      });
+    }
+
+    // Score
+    if (button === "next" && nextQuestion.answer === selected) {
+      // Level score
+      setScore((prevScore) => {
+        return {
+          ...prevScore["level"], 
+          level: {
+            ...prevScore.level,
+            [nextQuestion.level]: prevScore.level[nextQuestion.level] ? prevScore.level[nextQuestion.level] + 1 : 1
+          }
+        }
+      })
+
+      // Concepts Score
+      nextQuestion.concepts.forEach((concept) => {
+        setScore((prevScore) => {
+          return {
+            ...prevScore,
+            concepts: {
+              ...prevScore.concepts,
+              [concept]: prevScore.concepts[concept] ? prevScore.concepts[concept] + 1 : 1
+            }
+          }
+        });
+      });
+    }
+
+    setSelected(null);
+    if (data !== null && data.length > 0 && i < data.length) {
       let nextIndex = i;
-      while (nextIndex < data.length && !(data[nextIndex].language.includes(language))) {
+      while (
+        nextIndex < data.length &&
+        !data[nextIndex].language.includes(language)
+      ) {
         nextIndex++;
       }
 
       if (nextIndex < data.length) {
         setNextQuestion(data[nextIndex]);
-        seti(nextIndex + 1); 
+        seti(nextIndex + 1);
         setQueno(queno + 1);
       }
 
-      if (i === data.length - 1) setButton("Finish");
+      if (nextIndex >= data.length - 2) setButton("Finish");
     }
   }
 
-  function onSelected() {
-
-  }
+  console.log(score);
+  console.log(totalScore);
+  console.log(score === totalScore);
+  // console.log(score == totalScore);
 
   return (
     <Container className="test-Container">
       {nextQuestion !== null ? (
-        <Container className="test-innerContainer">
+        <Container className="testpage-innerContainer">
           <Container className="questions">
             <h2 className="ques-no"> Question {queno} </h2>
             <h3 className="question"> {nextQuestion.question} </h3>
           </Container>
           <Container className="options">
-            <Container className={`radio-btns`} value="A">
+            <Container
+              className={`radio-btns ${selected === "A" ? "clicked" : ""}`}
+              onClick={() => setSelected("A")}
+            >
               <p>{nextQuestion.A}</p>
             </Container>
-            <Container className={`radio-btns`} value="B">
+            <Container
+              className={`radio-btns ${selected === "B" ? "clicked" : ""}`}
+              onClick={() => setSelected("B")}
+            >
               <p>{nextQuestion.B}</p>
             </Container>
-            <Container className={`radio-btns`} value="C">
+            <Container
+              className={`radio-btns ${selected === "C" ? "clicked" : ""}`}
+              onClick={() => setSelected("C")}
+            >
               <p>{nextQuestion.C}</p>
             </Container>
-            <Container className={`radio-btns`} value="D">
+            <Container
+              className={`radio-btns ${selected === "D" ? "clicked" : ""}`}
+              onClick={() => setSelected("D")}
+            >
               <p>{nextQuestion.D}</p>
             </Container>
           </Container>
           <Container className="button">
-            <Button className="testpage-btn" onClick={handleButton}>
+            <Button
+              className="testpage-btn nxt-btn"
+              onClick={() => handleButton("next")}
+              disabled={!selected && button !== "Finish"}
+            >
               {button}
             </Button>
+            {button !== "Finish" ? (
+              <Button
+                className="testpage-btn skip-btn"
+                onClick={() => handleButton("skip")}
+              >
+                Skip
+              </Button>
+            ) : (
+              <></>
+            )}
           </Container>
         </Container>
       ) : (

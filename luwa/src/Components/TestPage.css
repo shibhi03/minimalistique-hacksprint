@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.test-innerContainer {
+.testpage-innerContainer {
     width: 50%;
     height: 50vh;
     display: grid;
@@ -49,6 +49,10 @@
     align-items: center;
 }
 
+.clicked {
+    border: solid 5px #FF914D;
+}
+
 .input-radio {
     display: none;
 }
@@ -60,12 +64,23 @@
 .button {
     margin-top: 10%;
     width: 100%;
-    height: auto;
+    height: 80%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .testpage-btn {
     width: 15rem;
     height: 4.5rem;
+}
+
+.nxt-btn {
+    width: 20rem;
+}
+
+.skip-btn {
+    width: 10rem;
+    height: 3.5rem;
 }

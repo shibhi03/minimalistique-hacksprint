@@ -8,7 +8,7 @@
         "answer": "A",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["Basics", "Data types"],
+        "concepts": ["Basics", "Data types"],
         "language": ["C", "CPP", "Java", "Python"]
     },
     {
@@ -20,7 +20,7 @@
         "answer": "C",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["Basics", "Loops"],
+        "concepts": ["Basics", "Loops"],
         "language": ["C", "CPP", "Java"]
     },
     {
@@ -32,7 +32,7 @@
         "answer": "B",
         "level": "Advanced",
         "category": "Practical",
-        "concept": ["OOPs", "Polymorphism"],
+        "concepts": ["OOPs", "Polymorphism"],
         "language": ["CPP"]
     },
     {
@@ -44,7 +44,7 @@
         "answer": "B",
         "level": "Intermediate",
         "category": "Practical",
-        "concept": ["References", "Lists"],
+        "concepts": ["References", "Lists"],
         "language": ["Python"]
     },
     {
@@ -56,7 +56,7 @@
         "answer": "D",
         "level": "Intermediate",
         "category": "Practical",
-        "concept": ["Collections", "Generics"],
+        "concepts": ["Collections", "Generics"],
         "language": ["Java"]
     },
     {
@@ -68,7 +68,7 @@
         "answer": "B",
         "level": "Basic",
         "category": "Practical",
-        "concept": ["Memory Management"],
+        "concepts": ["Memory Management"],
         "language": ["C"]
     },
     {
@@ -80,7 +80,7 @@
         "answer": "B",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["Language Features"],
+        "concepts": ["Language Features"],
         "language": ["Python"]
     },
     {
@@ -92,7 +92,7 @@
         "answer": "A",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["Data Types", "Memory"],
+        "concepts": ["Data Types", "Memory"],
         "language": ["C", "CPP"]
     },
     {
@@ -104,7 +104,7 @@
         "answer": "C",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["Basics", "Syntax"],
+        "concepts": ["Basics", "Syntax"],
         "language": ["Java"]
     },
     {
@@ -116,7 +116,7 @@
         "answer": "A",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["Memory Management", "RAII"],
+        "concepts": ["Memory Management", "RAII"],
         "language": ["CPP"]
     },
     {
@@ -128,7 +128,7 @@
         "answer": "C",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["Data Structures", "Lists"],
+        "concepts": ["Data Structures", "Lists"],
         "language": ["Python"]
     },
     {
@@ -140,7 +140,7 @@
         "answer": "B",
         "level": "Basic",
         "category": "Practical",
-        "concept": ["Operators", "Data Types"],
+        "concepts": ["Operators", "Data Types"],
         "language": ["Java"]
     },
     {
@@ -152,7 +152,7 @@
         "answer": "D",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["Pointers", "Operators"],
+        "concepts": ["Pointers", "Operators"],
         "language": ["CPP"]
     },
     {
@@ -164,7 +164,7 @@
         "answer": "C",
         "level": "Basic",
         "category": "Practical",
-        "concept": ["File Handling"],
+        "concepts": ["File Handling"],
         "language": ["Python"]
     },
     {
@@ -176,7 +176,7 @@
         "answer": "B",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["Collections", "Threading"],
+        "concepts": ["Collections", "Threading"],
         "language": ["Java"]
     },
     {
@@ -188,7 +188,7 @@
         "answer": "B",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["Keywords", "Memory"],
+        "concepts": ["Keywords", "Memory"],
         "language": ["C", "CPP"]
     },
     {
@@ -200,7 +200,7 @@
         "answer": "C",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["Decorators", "OOP"],
+        "concepts": ["Decorators", "OOP"],
         "language": ["Python"]
     },
     {
@@ -212,7 +212,7 @@
         "answer": "A",
         "level": "Advanced",
         "category": "Practical",
-        "concept": ["OOP", "Copy Constructor"],
+        "concepts": ["OOP", "Copy Constructor"],
         "language": ["CPP"]
     },
     {
@@ -224,11 +224,11 @@
         "answer": "B",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["Exception Handling"],
+        "concepts": ["Exception Handling"],
         "language": ["Java"]
     },
     {
-        "question": "What is the difference between malloc() and calloc() in C?",
+        "question": "Which of the following is true about malloc() or calloc() in C?",
         "A": "malloc() allocates less memory",
         "B": "calloc() initializes memory to zero",
         "C": "malloc() is faster",
@@ -236,11 +236,11 @@
         "answer": "B",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["Memory Management"],
+        "concepts": ["Memory Management"],
         "language": ["C"]
     },
     {
-        "question": "What will be the output of: for(int i=0; i<5; i++) { if(i==2) continue; print(i); }",
+        "question": "What will be the output of: for i = 0 to 5 do { if (i==2) then continue; print(i); }",
         "A": "0 1 2 3 4",
         "B": "0 1 3 4",
         "C": "0 1 2",
@@ -248,7 +248,7 @@
         "answer": "B",
         "level": "Basic",
         "category": "Practical",
-        "concept": ["Control Flow", "Loops"],
+        "concepts": ["Control Flow", "Loops"],
         "language": ["C", "CPP", "Java", "Python"]
     },
     {
@@ -260,7 +260,7 @@
         "answer": "B",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["OOPs", "Polymorphism"],
+        "concepts": ["OOPs", "Polymorphism"],
         "language": ["CPP", "Java"]
     },
     {
@@ -272,7 +272,7 @@
         "answer": "B",
         "level": "Intermediate",
         "category": "Practical",
-        "concept": ["Exception Handling"],
+        "concepts": ["Exception Handling"],
         "language": ["CPP", "Java", "Python"]
     },
     {
@@ -284,7 +284,7 @@
         "answer": "D",
         "level": "Intermediate",
         "category": "Practical",
-        "concept": ["Arrays", "Memory Management"],
+        "concepts": ["Arrays", "Memory Management"],
         "language": ["C", "CPP", "Java", "Python"]
     },
     {
@@ -296,7 +296,7 @@
         "answer": "A",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["OOPs", "Inheritance"],
+        "concepts": ["OOPs", "Inheritance"],
         "language": ["Java", "Python"]
     },
     {
@@ -308,7 +308,7 @@
         "answer": "C",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["OOPs", "Abstraction"],
+        "concepts": ["OOPs", "Abstraction"],
         "language": ["CPP", "Java"]
     },
     {
@@ -320,7 +320,7 @@
         "answer": "B",
         "level": "Basic",
         "category": "Practical",
-        "concept": ["Data Types", "Operators"],
+        "concepts": ["Data Types", "Operators"],
         "language": ["Python"]
     },
     {
@@ -332,7 +332,7 @@
         "answer": "C",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["Collections", "Data Structures"],
+        "concepts": ["Collections", "Data Structures"],
         "language": ["Java"]
     },
     {
@@ -344,7 +344,7 @@
         "answer": "A",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["Keywords", "Const Correctness"],
+        "concepts": ["Keywords", "Const Correctness"],
         "language": ["CPP"]
     },
     {
@@ -356,7 +356,7 @@
         "answer": "B",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["Multithreading", "Memory Management"],
+        "concepts": ["Multithreading", "Memory Management"],
         "language": ["C", "CPP", "Java", "Python"]
     },
     {
@@ -368,7 +368,7 @@
         "answer": "B",
         "level": "Advanced",
         "category": "Practical",
-        "concept": ["Design Patterns", "OOPs"],
+        "concepts": ["Design Patterns", "OOPs"],
         "language": ["CPP", "Java", "Python"]
     },
     {
@@ -380,7 +380,7 @@
         "answer": "B",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["Algorithms", "Time Complexity"],
+        "concepts": ["Algorithms", "Time Complexity"],
         "language": ["C", "CPP", "Java", "Python"]
     },
     {
@@ -392,7 +392,7 @@
         "answer": "B",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["Pointers", "Functions"],
+        "concepts": ["Pointers", "Functions"],
         "language": ["C", "CPP"]
     },
     {
@@ -404,7 +404,7 @@
         "answer": "B",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["Serialization", "IO"],
+        "concepts": ["Serialization", "IO"],
         "language": ["Java", "Python"]
     },
     {
@@ -416,7 +416,7 @@
         "answer": "B",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["OOPs", "Memory Management"],
+        "concepts": ["OOPs", "Memory Management"],
         "language": ["CPP"]
     },
     {
@@ -428,7 +428,7 @@
         "answer": "D",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["File Handling"],
+        "concepts": ["File Handling"],
         "language": ["C", "CPP", "Python"]
     },
     {
@@ -440,7 +440,7 @@
         "answer": "B",
         "level": "Intermediate",
         "category": "Practical",
-        "concept": ["Exception Handling"],
+        "concepts": ["Exception Handling"],
         "language": ["CPP"]
     },
     {
@@ -452,7 +452,7 @@
         "answer": "C",
         "level": "Intermediate",
         "category": "Theory",
-        "concept": ["OOPs", "Interfaces"],
+        "concepts": ["OOPs", "Interfaces"],
         "language": ["Java"]
     },
     {
@@ -464,7 +464,7 @@
         "answer": "A",
         "level": "Basic",
         "category": "Theory",
-        "concept": ["OOPs", "Constructors"],
+        "concepts": ["OOPs", "Constructors"],
         "language": ["Python"]
     },
     {
@@ -476,7 +476,7 @@
         "answer": "D",
         "level": "Advanced",
         "category": "Theory",
-        "concept": ["OOPs", "Memory Management"],
+        "concepts": ["OOPs", "Memory Management"],
         "language": ["CPP"]
     }
 ]

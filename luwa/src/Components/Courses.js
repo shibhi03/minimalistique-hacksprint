@@ -1,19 +1,8 @@
 import { useEffect, useState } from "react";
-import "./Courses.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import c from "../Assets/c.png";
-// import cpp from "../Assets/cpp.png";
-// import java from "../Assets/java.png";
-// import py from "../Assets/python.png";
 import axios from "axios";
-
-// export const coursesList = [
-//   { id: 1, name: "C", img: 'c' },
-//   { id: 2, name: "C++", img: 'cpp' },
-//   { id: 3, name: "Java", img: 'java' },
-//   { id: 4, name: "Python", img: 'py' },
-// ];
+import "./Courses.css";
 
 export default function Course() {
   const [coursesList, setCoursesList] = useState(null);

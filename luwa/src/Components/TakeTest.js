@@ -16,7 +16,7 @@ export default function TakeTest() {
           <h1 className="test-text ">Let's analyze your level in {course}</h1>
         </Row>
         <Row className="test-btns">
-          <Button className="test-btn btn" onClick={() => navigate()}>Take Test</Button>
+          <Button className="test-btn btn" onClick={() => navigate('/takeTest/questions', {state: {course}})}>Take Test</Button>
           <Button className="back-btn btn" onClick={() => navigate(-1)}>
             Back
           </Button>
